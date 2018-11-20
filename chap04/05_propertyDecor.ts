@@ -33,3 +33,22 @@ class StaticClassWithPropertyDec{
 
 let statics = new StaticClassWithPropertyDec();
 console.log('static property ', statics)
+
+
+function methodDec(target:any, methodName:string, descriptor?: PropertyDecorator){
+    console.log(`target: ${target}`)
+    console.log(`methodName: ${methodName}`)
+    console.log(`target[methodName] : ${target[methodName]}`)
+}
+
+console.log('----')
+
+class ClassWithMethodDec{
+    @methodDec
+    print(output: string) {
+        console.log(`ClassWithMethodDec.print (${output}) called .`);
+    }
+}
+
+
+console.log(`methodDoc : ${new ClassWithMethodDec()}`)
