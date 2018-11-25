@@ -10,15 +10,19 @@ var GlobalLogger = /** @class */ (function () {
     };
     return GlobalLogger;
 }());
-/*class ContactLogger {
-    static logContactData() {
-        for (let contact of CONTACT_DATA) {
-            console.log(`DisplayText: ${contact.DisplayText}` +
-                `, Email : ${contact.Email}`);
-        }
+var ContactLogger = /** @class */ (function () {
+    function ContactLogger() {
     }
-}*/
+    ContactLogger.logContactData = function () {
+        for (var _i = 0, CONTACT_DATA_1 = CONTACT_DATA; _i < CONTACT_DATA_1.length; _i++) {
+            var contact = CONTACT_DATA_1[_i];
+            console.log("DisplayText: " + contact.DisplayText +
+                (", Email : " + contact.Email));
+        }
+    };
+    return ContactLogger;
+}());
 window.onload = function () {
     GlobalLogger.logGlobalsToConsole();
-    // ContactLogger.logContactData();
+    ContactLogger.logContactData();
 };

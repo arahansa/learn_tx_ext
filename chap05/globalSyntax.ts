@@ -1,4 +1,5 @@
 declare let CONTACT_EMAIL_ARRAY: string[]
+declare let CONTACT_DATA: string[]
 
 class GlobalLogger {
     static logGlobalsToConsole() {
@@ -9,16 +10,16 @@ class GlobalLogger {
 }
 
 
-/*class ContactLogger {
+class ContactLogger {
     static logContactData() {
         for (let contact of CONTACT_DATA) {
             console.log(`DisplayText: ${contact.DisplayText}` +
                 `, Email : ${contact.Email}`);
         }
     }
-}*/
+}
 
 window.onload = () => {
     GlobalLogger.logGlobalsToConsole();
-    // ContactLogger.logContactData();
+    ContactLogger.logContactData();
 }
